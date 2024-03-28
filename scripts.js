@@ -8,9 +8,10 @@
 // const nomDeMaFonction = (paramètre) => {
 //   // Code de ma fonction
 // }
-// console.log(nomDeMaFonction(On remplace le paramètre par ce qu'on désire)) // 
+// console.log(nomDeMaFonction(On remplace le paramètre par ce qu'on désire)) //
 
-// CODE ICI
+const multiply = (a, b) => a * b;
+console.log(`Exercice 1 : ${multiply(2, 3)}`);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 2
@@ -21,7 +22,8 @@
 // const monTableau = [1, 2, 3]
 // console.log(monTableau[0]) // 1
 
-// CODE ICI
+const simpleArray = (Array) => Array[0];
+console.log(`Exercice 2 : ${simpleArray([5, 10, 15, 3, 2, 1])}`);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
@@ -33,7 +35,9 @@
 // monTableau.pop()
 // console.log(monTableau) // [1, 2]
 
-// CODE ICI
+const arrayPop = (Array) => (Array.pop(""), Array);
+
+console.log(`Exercice 3 : ${arrayPop([5, 10, 15, 3, 2, 1])}`);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 4
@@ -46,17 +50,16 @@
 //   console.log(monTableau[i]) // 1, 2, 3
 // }
 
-// CODE ICI
+const arrayCount = (Array) => Array.reduce((acc, value) => acc + value, 0);
 
-
-
+console.log(`Exercice 4 : ${arrayCount([5, 10, 15, 3, 2, 1])}`);
 
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 5
 //Crée une fonction qui prend en paramètre une string et qui doit retourner la string inversée.
 // Exemple : "Hello" => "olleH"
-// Pour cette exercice on va utiliser la méthode split() qui permet de transformer une string en tableau. Et la méthode reverse() qui permet d'inverser un tableau : 
+// Pour cette exercice on va utiliser la méthode split() qui permet de transformer une string en tableau. Et la méthode reverse() qui permet d'inverser un tableau :
 // const maString = "Hello"
 // const monTableau = maString.split("")
 // console.log(monTableau) // ["H", "e", "l", "l", "o"]
@@ -64,7 +67,8 @@
 // console.log(monTableauInverse) // ["o", "l", "l", "e", "H"]
 //Maintenant que la string est inversée il faut la remettre en string avec la méthode join().
 
-// CODE ICI
+const reverseString = (str) => str.split("").reverse().join("");
+console.log(`Exercice 5 : ${reverseString("Hello")}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -75,7 +79,8 @@
 // const monTableau = [1, 2, 3]
 // console.log(Math.max(...monTableau)) // 3
 
-// CODE ICI
+const sortArrayMax = (array) => array.sort((a, b) => b - a)[0];
+console.log(`Exercice 6 : ${sortArrayMax([1, 74, 1, 78574, 14, 157, 854])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -86,7 +91,8 @@
 // const monTableau = [1, 2, 3]
 // console.log(Math.min(...monTableau)) // 1
 
-// CODE ICI
+const sortArraySmall = (array) => array.sort((a, b) => a - b)[0];
+console.log(`Exercice 7 : ${sortArraySmall([52, 74, 1, 78574, 14, 157, 854])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -102,7 +108,9 @@
 //   return element !== "e" && element !== "o"
 // })
 
-// CODE ICI
+const iDontLikeVoyel = (str) =>
+  str.split("").filter((letter) => letter.match(/[^aeiouy]/gi));
+console.log(`Exercice 8 : ${iDontLikeVoyel("Hello")}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -114,7 +122,8 @@
 // const monTableau = [1, 3, 2]
 // console.log(monTableau.sort()) // [1, 2, 3]
 
-// CODE ICI
+const sortArray = (array) => array.sort((a, b) => a - b);
+console.log(`Exercice 9 : ${sortArray([1, 74, 1, 78574, 14, 157, 854])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -131,7 +140,15 @@
 // }
 // console.log(monTableau) // ["Hello", "elloH", "lloHe", "loHel", "oHell"]
 
-// CODE ICI
+const wordDesorder = (str) => {
+  const result = [];
+  for (let i = 0; i < str.length; i++) {
+    const maStringRotate = str.substring(i) + str.substring(0, i);
+    result.push(maStringRotate);
+  }
+  return result;
+};
+console.log(`Exercice 10 : ${wordDesorder("Hello")}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -145,7 +162,9 @@
 //   return element + 1
 // })
 
-// CODE ICI
+const arrayAdd1 = (Array) => Array.map((value) => value + 1);
+
+console.log(`Exercice 11 : ${arrayAdd1([5, 10, 15, 3, 2, 1])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -159,7 +178,9 @@
 //   return element.length
 // })
 
-// CODE ICI
+const wordLength = (Array) => Array.map((word) => word.length);
+
+console.log(`Exercice 12 : ${wordLength(["Hello", "World"])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -167,14 +188,16 @@
 
 // Crée une fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les premières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["H", "W"]
-// Pour cette exercice on va utiliser la méthode map() qui permet de parcourir un tableau. 
+// Pour cette exercice on va utiliser la méthode map() qui permet de parcourir un tableau.
 // Et la méthode charAt() qui permet de récupérer un caractère à une position précise :
 // const monTableau = ["Hello", "World"]
 // const monTableauPremiereLettre = monTableau.map((element) => {
 //   return element.charAt(0)
 // })
 
-// CODE ICI
+const wordFirstLetter = (Array) => Array.map((word) => word.charAt(0));
+
+console.log(`Exercice 13 : ${wordFirstLetter(["Hello", "World"])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -184,8 +207,10 @@
 // Exemple : ["Hello", "World"] => ["o", "d"]
 // Indice regarde l'exercice 13, c'est exactement la même chose sauf qu'il faut récupérer la dernière lettre et non la première.
 
+const wordLastLetter = (Array) =>
+  Array.map((word) => word.charAt(word.length - 1));
 
-// CODE ICI
+console.log(`Exercice 14 : ${wordLastLetter(["Hello", "World"])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -195,7 +220,11 @@
 // Exemple : ["Hello", "World","Test", "Salut", "Yo"] => ["Hello", "World", "Salut"]
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la longueur de la string. Incice : la méthode length() permet de récupérer la longueur d'une string.
 
-// CODE ICI
+const wordFilter = (Array) => Array.filter((word) => word.length >= 5);
+
+console.log(
+  `Exercice 15 : ${wordFilter(["Hello", "World", "Test", "Salut", "Yo"])}`
+);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -209,7 +238,9 @@
 //   return accumulateur + element
 // }, 0)
 
-// CODE ICI
+const arrayCount2 = (Array) => Array.reduce((acc, value) => acc + value, 0);
+
+console.log(`Exercice 16 : ${arrayCount2([5, 10, 15, 3, 2, 1])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -223,7 +254,11 @@
 // const monTableauConcat = monTableau1.concat(monTableau2)
 // console.log(monTableauConcat) // ["Hello", "World", "Test", "Salut"]
 
-// CODE ICI
+const arrayFusion = (Array1, Array2) => Array1.concat(Array2);
+
+console.log(
+  `Exercice 17 : ${arrayFusion(["Hello", "World"], ["Test", "Salut"])}`
+);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -233,7 +268,9 @@
 // Exemple : ["Poulet", "Chat", "Chien", "Cheval"] => ["Poulet", "Chien", "Cheval"]
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la présence de la lettre "e". Indice : la méthode includes() permet de savoir si une string contient une lettre ou un mot.
 
-// CODE ICI
+const weLoveE = (Array) => Array.filter((word) => word.includes("e"));
+
+console.log(`Exercice 18 : ${weLoveE(["Poulet", "Chat", "Chien", "Cheval"])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -243,7 +280,9 @@
 // Exemple : [ 2, 9, 6, 5, 6] => [2, 6, 6]
 // Indice : il y a plusieurs façon de faire, soit avec un for, soit avec la méthode filter() une fois ça fait utilise la méthode sort() qui permet de trier un tableau.
 
-// CODE ICI
+const weDontLikeEven = (Array) => Array.filter((nb) => nb % 2 === 0).sort();
+
+console.log(`Exercice 19 : ${weDontLikeEven([2, 9, 6, 5, 6])}`);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -253,182 +292,59 @@
 
 // Crée une fonction qui renvoie la longueur du ou des mots les plus courts dans une phrase.
 // La chaîne ne sera jamais vide et vous n'avez pas besoin de tenir compte des différents types de données.
-// Exemple : 
+// Exemple :
 // findShort("Prachett is the best author in the world ") // 2
 // findShort("The quick brown fox jumps over the lazy dog") // 3
 
-// Indice : la méthode split() permet de transformer une string en tableau en fonction d'un séparateur :
-// const maString = "Hello World"
-// const monTableau = maString.split(" ")
-// console.log(monTableau) // ["Hello", "World"]
-// Indice 2 :  Oublie pas de boucler sur le tableau pour récupérer la longueur de chaque mot. Que soit avec un for ou avec la méthode map().
-// Indice 3 : Pour récupérer le mot le plus court tu dois voir la longueur de chaque mot, quel méthode permet de récupérer la longueur d'une string ? 
-// Indice 4 : Pour récupérer le mot le plus court tu dois le trier, quel méthode permet de trier un tableau ? Si tu as utilisé la méthode map() pour récupérer la longueur de chaque mot, tu peux utiliser la méthode sort() directement sur le tableau que tu as récupéré avec la méthode map().
-// Indice 5 : Le .sort() trie les nombres en fonction de leur valeur unicode, pour trier des nombres il faut utiliser une fonction de comparaison :
-// const monTableau = [1, 2, 3, 4, 5]
-// const monTableauTri = monTableau.sort((a, b) => {
-//   return a - b
-// })
-// Indice 6 : Pour récupérer le premier élément d'un tableau tu peux utiliser la notation crochet : monTableau[0]
+const findShort = (str) =>
+  str
+    .split(" ")
+    .map((word) => word.length)
+    .sort()[0];
 
+console.log(
+  `Exercice 20 : ${findShort("The quick brown fox jumps over the lazy dog")}`
+);
 
+// EXERCICE 21
 
+//Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères. Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
 
+const anagram = (str1, str2) => {
+  const string1 = [...str1].sort().join("");
+  const string2 = [...str2].sort().join("");
 
-// CODE ICI
+  return `is a anagram ? ${string1 === string2}`;
+};
 
-
-
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//--------------------------------------SOLUTIONS-----------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-
-// const findShort = (phrase) => {
-//   let tableau = phrase.split(" ");
-//     let tableauLongueur = tableau.map((element) => {
-//         return element.length
-//         }
-//     )
-//     let tableauTri = tableauLongueur.sort((a, b) => {
-//         return a - b
-//     }
-//     )   
-//     return tableauTri[0]
-// }
-
-// console.log(findShort("Prachett is the best author in the world"))
-
-
-//----------------------------------------------------------------------------------------------//
-
-// EXERCICE 21 
-
- //Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères. Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
-
- // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
-
-
-// CODE ICI
-
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//--------------------------------------SOLUTIONS-----------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-
-
-// const anagram = (string1, string2) => {
-//     let tableau1 = string1.split("")
-//     let tableau2 = string2.split("")
-//     let tableau1Tri = tableau1.sort()
-//     let tableau2Tri = tableau2.sort()
-//     if (tableau1Tri.join("") === tableau2Tri.join("")) {
-//         return true
-//     } else {
-//         return false
-//     }
-// }
-
-// console.log(anagram("listen", "silent"))
-
-
-//----------------------------------------------------------------------------------------------//
+console.log(`Exercice 21 : ${anagram("silent", "listen")}`);
 
 // EXERCICE 22
 
 //Ecrivez une fonction qui enlève les doubles lettres d'une chaîne donnée. Par exemple, "google" deviendrait "gogle"
-// Par exemple : 
+// Par exemple :
 // removeDoubleLetters("google") // "gogle"
 // removeDoubleLetters("Hello World!") // "Helo World!"
-//Indice : Afin de supprimer les doubles lettres, vous devez parcourir la chaîne et comparer chaque caractère avec le caractère suivant. Si les deux caractères sont identiques, vous devez supprimer le deuxième caractère. Donc pour pouvoir comporaer chaque caractère avec le suivant, vous devez transformer la string en tableau. 
-// Indice 2 : Pour supprimer un élément d'un tableau vous pouvez utiliser la méthode splice() combiné à une boucle ou la méthode filter() qui permet de filtrer un tableau en fonction d'une condition.
 
+const doubleLetter = (str) =>
+  [...str].filter((letter, index) => letter !== letter[index - 1]).join("");
 
-// CODE ICI
-
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//--------------------------------------SOLUTIONS-----------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-
-// const removeDoubleLetters = (string) => {
-//     let tableau = string.split("")
-//     let tableauFiltre = tableau.filter((element, index) => {
-//         return element !== tableau[index + 1]
-//     })
-//     return tableauFiltre.join("")
-// }
-
-
-// console.log(removeDoubleLetters("google"))
-
-// const removeDoubleLetters = (string) => {
-//     let tableau = string.split("")
-//     for (let i = 0; i < tableau.length; i++) {
-//         if (tableau[i] === tableau[i + 1]) {
-//             tableau.splice(i, 1)
-//         }
-//     }
-//     return tableau.join("")
-// }
-// console.log(removeDoubleLetters("google"))
-
-//----------------------------------------------------------------------------------------------//
+console.log(`Exercice 22 : ${doubleLetter("google")}`);
 
 // EXERCICE 23
 
- //Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
+//Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
 // Exemple :
 // createPhoneNumber([1,2,3,4,5,6,7,8,9,0]) // "(123) 456-7890"
-// Indice : Utilisez la méthode slice() pour découper le tableau en plusieurs morceaux. Puis utilisez la méthode join() pour transformer un tableau en string.
 
-// CODE ICI
+const createPhoneNumber = (array) =>
+  `(${array.slice(0, 3).join("")}) ${array.slice(3, 6).join("")}-${array
+    .slice(6, 10)
+    .join("")}`;
 
-
-
-
-
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//--------------------------------------SOLUTIONS-----------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-
-// const createPhoneNumber = (tableau) => {
-//     let tableau1 = tableau.slice(0, 3)
-//     let tableau2 = tableau.slice(3, 6)
-//     let tableau3 = tableau.slice(6, 10)
-//     return `(${tableau1.join("")}) ${tableau2.join("")}-${tableau3.join("")}`
-// }    
-
-// console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0]))
-
-//----------------------------------------------------------------------------------------------//
-
-
-
-
+console.log(
+  `Exercice 23 : ${createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])}`
+);
 
 // EXERCICE 24
 
@@ -436,81 +352,34 @@
 // Exemple :
 // findMissingLetter(["a","b","c","d","f"]) // "e"
 // findMissingLetter(["O","Q","R","S"]) // "P"
-// Indice : Oubliez pas de boucler et vous pouvez utiliser la méthode charCodeAt() pour récupérer le code unicode d'un caractère. 
+// Indice : Oubliez pas de boucler et vous pouvez utiliser la méthode charCodeAt() pour récupérer le code unicode d'un caractère.
 // Indice 2 : Vous pouvez utiliser la méthode fromCharCode() pour récupérer un caractère à partir de son code unicode.  Exemple : String.fromCharCode(65) renvoie "A". Mais attention à refaire la boucle dans l'autre sens pour pouvoir comparer les codes unicode des caractères du tableau avec les codes unicode des caractères manquants.
 // Indice 3 : Il y a plus cas comparer les codes unicode des caractères du tableau avec les codes unicode des caractères manquants pour trouver le caractère manquant avec une condition if. Et retourner le caractère manquant avec un return et la méthode fromCharCode().
 
-// CODE ICI
+const findMissingLetter = (array) => {
+  for (let i = 1; i < array.length; i++) {
+    const check = array[i].charCodeAt(0) - 1 !== array[i - 1].charCodeAt(0);
 
+    if (check) {
+      return String.fromCharCode(array[i - 1].charCodeAt(0) + 1);
+    }
+  }
+};
 
-
-
-
-
-
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//--------------------------------------SOLUTIONS-----------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-// const findMissingLetter = (tableau) => {
-//     let tableauUnicode = tableau.map((element) => {
-//         return element.charCodeAt()
-//     })
-//     for (let i = 0; i < tableauUnicode.length; i++) {
-//         if (tableauUnicode[i] !== tableauUnicode[i + 1] - 1) {
-//             return String.fromCharCode(tableauUnicode[i] + 1)
-//         }
-//     }
-// }
-
-// console.log(findMissingLetter(["a","b","c","d","f"]))
-
-//----------------------------------------------------------------------------------------------//
-
+console.log(`Exercice 24 : ${findMissingLetter(["a", "b", "c", "d", "f"])}`);
 
 // EXERCICE 25
 
- //Écrivez une fonction qui prend un tableau de string et renvoie un tableau de string triées par ordre alphabétique.
+//Écrivez une fonction qui prend un tableau de string et renvoie un tableau de string triées par ordre alphabétique.
 // Exemple :
 // sortString(["Banana", "Orange", "Apple", "Mango"]) // ["Apple", "Banana", "Mango", "Orange"]
 // sortString(["lait", "beurre", "fromage", "yaourt"]) // ["beurre", "fromage", "lait", "yaourt"]
 
-//Indice : Vous pouvez utiliser la méthode sort() pour trier un tableau. Mais attention, par défaut la méthode sort() trie les éléments d'un tableau par ordre alphabétique en se basant sur les codes unicode des caractères. Donc si vous utilisez la méthode sort() sur un tableau de string, les éléments seront triés par ordre alphabétique en se basant sur les codes unicode des caractères. Par exemple, "Banana" sera considéré comme plus petit que "Orange" car le code unicode de "B" est plus petit que le code unicode de "O". Pour trier un tableau de string par ordre alphabétique en se basant sur l'ordre alphabétique des lettres, vous devez utiliser une fonction de comparaison en paramètre de la méthode sort().
-// Indice 2 : Pour trier un tableau de string par ordre alphabétique en se basant sur l'ordre alphabétique des lettres, vous devez utiliser une fonction de comparaison en paramètre de la méthode sort(). Cette fonction de comparaison prend deux paramètres (a et b) et renvoie un nombre négatif si a est plus petit que b, un nombre positif si a est plus grand que b et 0 si a est égal à b.
+const sortString = (Array) => Array.sort((a, b) => a.localeCompare(b));
 
-// CODE ICI
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//--------------------------------------SOLUTIONS-----------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------//
-
-
-
-
-
-// const sortString = (tableau) => {
-//     return tableau.sort((a, b) => {
-//         if (a.toLowerCase() < b.toLowerCase()) {
-//             return -1
-//         }
-//         if (a.toLowerCase() > b.toLowerCase()) {
-//             return 1
-//         }
-//         return 0
-//     })
-// }
-
-// console.log(sortString(["Banana", "Orange", "Apple", "Mango"]))
-
-//----------------------------------------------------------------------------------------------//
+console.log(
+  `Exercice 25 : ${sortString(["banana", "orange", "Apple", "Mango"])}`
+);
 
 // EXERCICE 26
 // Écris une fonction qui étant donné deux angles d'un triangle renvoie la mesure du troisième angle.
@@ -520,9 +389,9 @@
 // otherAngle(60, 60) // 60
 // Indice : Pour trouver le troisième angle, tu dois soustraire la somme des deux angles donnés à 180 degrés.
 
-// CODE ICI
+const triangleDeg3 = (deg1, deg2) => 180 - deg1 - deg2;
 
-//----------------------------------------------------------------------------------------------//
+console.log(`Exercice 26 : ${triangleDeg3(30, 60)}`);
 
 // EXERCICE 27
 // Écris une fonction qui peut déterminer si une année est une année bissextile ou non. Elle doit renvoyer true si c'est le cas, sinon false.
@@ -532,9 +401,9 @@
 // isLeapYear(2021) // false
 // Indice : Pour savoir ça tu peux utiliser le modulo. Si une année est divisible par 4 et que le reste de la division est égal à 0, alors c'est une année bissextile.
 
-// CODE ICI
+const isLeapYear = (year) => (year % 4 === 0 ? true : false);
 
-//----------------------------------------------------------------------------------------------//
+console.log(`Exercice 27 : ${isLeapYear(2020)}`);
 
 // EXERCICE 28
 
@@ -549,102 +418,62 @@ const animals = [
   { name: "Eagle", type: "Wild" },
   { name: "Donkey", type: "Domestic" },
   { name: "Pigeon", type: "Domestic" },
-  { name: "Monkey", type: "Wild" }
-]
+  { name: "Monkey", type: "Wild" },
+];
 
 // Exemple :
 // sortAnimals(animals) // [["Cat", "Dog", "Donkey", "Pigeon", "Turtle"], ["Eagle", "Monkey", "Panda", "Crocodile"]]
 // Indice : Oubliez pas que tu peux créer des variables qui contiennent des tableaux vides et que tu peux ajouter des éléments à un tableau avec la méthode push(). Mais vu que tu dois analyser le tableau d'animaux pour le trier, tu dois utiliser une boucle et faire des conditions if pour savoir si l'animal est domestique ou sauvage. Et tu dois trier les animaux domestiques par ordre alphabétique et les animaux sauvages par ordre alphabétique inversé. Pour trier un tableau par ordre alphabétique tu peux utiliser la méthode sort(). Pour trier un tableau par ordre alphabétique inversé tu peux utiliser la méthode reverse().
 
-// CODE ICI
+const sortAnimals = (array) => {
+  const Wild = [];
+  const Domestic = [];
 
+  array.map((animal) => {
+    if (animal.type === "Wild") {
+      return Wild.push(animal.name);
+    }
+    Domestic.push(animal.name);
+  });
 
+  return [
+    Domestic.sort((a, b) => a.localeCompare(b)),
+    Wild.sort((a, b) => a.localeCompare(b)),
+  ];
+};
 
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-
-// const sortAnimals = (animals) => {
-//     let tableauDomestic = []
-//     let tableauWild = []
-//     let tableauFinal = []
-//     for (let i = 0; i < animals.length; i++) {
-//         if (animals[i].type === "Domestic") {
-//         tableauDomestic.push(animals[i].name)
-//         } else {
-//         tableauWild.push(animals[i].name)
-//         }
-//     }
-//     tableauDomestic.sort()
-//     tableauWild.sort()
-//     tableauWild.reverse()
-//     tableauFinal.push(tableauDomestic)
-//     tableauFinal.push(tableauWild)
-//     return tableauFinal
-//     }
-
-// console.log(sortAnimals(animals))
-
-//----------------------------------------------------------------------------------------------//
-
-
-
+console.log(`Exercice 28 : ${JSON.stringify(sortAnimals(animals))}`);
 
 // EXERCICE 29
 
-// Un employé de théatre souhaite obtenir la liste de tous les sièges de sa salle principal. Dans la salle les places sont réparties comme suit : 
+// Un employé de théatre souhaite obtenir la liste de tous les sièges de sa salle principal. Dans la salle les places sont réparties comme suit :
 // - Il y a 26 colonnes de sièges, numérotées de "1" à "26".
 // - Chaque colonne contient 100 sièges, numérotés de "1" à "100".
 
-// Complète la function theatreSieges() qui doit renvoyer un tableau où chaque sous-tableau répertorie les positions des siègnes dans une rangée. 
+// Complète la function theatreSieges() qui doit renvoyer un tableau où chaque sous-tableau répertorie les positions des siègnes dans une rangée.
 // Exemple  du résultat attendu :
 // [
-    // ["1-1", "1-2", "1-3", ..., "1-99", "1-100"],
-    // ["2-1", "2-2", "2-3", ..., "2-99", "2-100"],
-    // ["3-1", "3-2", "3-3", ..., "3-99", "3-100"],
-    // ...
-    // ["26-1", "26-2", "26-3", ..., "26-99", "26-100"]
+// ["1-1", "1-2", "1-3", ..., "1-99", "1-100"],
+// ["2-1", "2-2", "2-3", ..., "2-99", "2-100"],
+// ["3-1", "3-2", "3-3", ..., "3-99", "3-100"],
+// ...
+// ["26-1", "26-2", "26-3", ..., "26-99", "26-100"]
 // ]
 
-// Indice : Tu dois utiliser deux boucles imbriquées pour créer les sous-tableaux. La première boucle doit parcourir les colonnes et la seconde boucle doit parcourir les sièges de chaque colonne. 
+// Indice : Tu dois utiliser deux boucles imbriquées pour créer les sous-tableaux. La première boucle doit parcourir les colonnes et la seconde boucle doit parcourir les sièges de chaque colonne.
 
-// CODE ICI
+const theatreSieges = (col, seats) => {
+  for (let i = 1; i <= col; i++) {
+    let seat = [];
+    for (let j = 1; j <= seats; j++) {
+      seat.push(`${i}-${j}`);
+    }
+    console.log(seat);
+  }
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-
-// const theatreSieges = () => {
-//     let tableau = []
-//     for (let i = 1; i <= 26; i++) {
-//         let tableau2 = []
-//         for (let j = 1; j <= 100; j++) {
-//             tableau2.push(`${i}-${j}`)
-//         }
-//         tableau.push(tableau2)
-//     }
-//     return tableau
-// }
-
-// console.log(theatreSieges())
-
-//----------------------------------------------------------------------------------------------//
+console.log(`Exercice 29 : Too many data , Unlock for see the result`);
+// console.log(`Exercice 29 : ${JSON.stringify(theatreSieges(26, 100))}`);
 
 // EXERCICE 30
 
@@ -662,42 +491,37 @@ Pour exemple, si ta fonction recevait le tableau ci-dessous en paramètre, tu de
 */
 //Indice : Tu dois utiliser une boucle for pour parcourir le tableau et une condition if pour savoir si notre équipe a gagné, perdu ou fait match nul. Et tu dois ajouter les points de chaque match à une variable score qui doit être initialisée à 0. Et tu dois retourner la variable score à la fin de la fonction.
 
-// CODE ICI
+const totalScore = (scores) => {
+  let result = 0;
 
+  scores.map((score) => {
+    let myTeam = score.match(/^[0-9]/)[0];
+    let yourTeam = score.match(/[0-9]$/)[0];
 
+    if (myTeam > yourTeam) {
+      result += 3;
+    } else if (myTeam == yourTeam) {
+      result += 1;
+    }
+  });
 
+  return result;
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-
-// const footballPoints = (tableau) => {
-//     let score = 0
-//     for (let i = 0; i < tableau.length; i++) {
-//         if (tableau[i][0] > tableau[i][2]) {
-//             score += 3
-//         } else if (tableau[i][0] === tableau[i][2]) {
-//             score += 1
-//         }
-//     }
-//     return score
-// }
-// console.log(footballPoints(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:3"]))
-
-//----------------------------------------------------------------------------------------------//
-
+console.log(
+  `Exercice 30 : ${totalScore([
+    "1:0",
+    "2:0",
+    "3:0",
+    "4:4",
+    "2:2",
+    "3:3",
+    "1:4",
+    "2:3",
+    "2:4",
+    "3:3",
+  ])}`
+);
 
 // EXERCICE 31
 
@@ -712,163 +536,100 @@ sumArr( ["2", "7", "3", "8", "2"], ["2", "4", "9"] ) should return ["4", "11", "
 sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "12", "5", "5"]
 */
 
-//Indice : Tu dois utiliser une boucle for pour parcourir les tableaux et une condition if pour savoir si un élément est vide. Si un élément est vide tu dois le remplacer par 0. Et tu dois ajouter les éléments des deux tableaux à une variable tableau3 qui doit être initialisée à un tableau vide. Et tu dois retourner le tableau3 à la fin de la fonction.
+const sumArr = (array1, array2) => {
+  let result = [];
 
-// CODE ICI
+  while (array1.length > array2.length) {
+    array2.push(0);
+  }
+  while (array2.length > array1.length) {
+    array1.push(0);
+  }
 
+  array1.map((nb, index) => {
+    result.push(nb * 1 + array2[index] * 1);
+  });
+  return result;
+};
 
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-
-// const sumArr = (tableau1, tableau2) => {
-//     let tableau3 = []
-//     for (let i = 0; i < tableau1.length; i++) {
-//         if (tableau1[i] === "") {
-//             tableau1[i] = 0
-//         }
-//         if (tableau2[i] === "") {
-//             tableau2[i] = 0
-//         }
-//         tableau3.push(parseInt(tableau1[i]) + parseInt(tableau2[i]))
-//     }
-//     return tableau3
-// }
-
-// console.log(sumArr(["1", "2", "3"], ["2", "4", "1"]))
-
-//----------------------------------------------------------------------------------------------//
+console.log(
+  `Exercice 31 : ${JSON.stringify(
+    sumArr(["2", "5", "3"], ["2", "4", "9", "5", "5"])
+  )}`
+);
 
 // EXERCICE 32
 
 // Écris une fonction generatedCharacter qui crée de manière aléatoires des personnages donjon et dragon avec une classe et des noms de personnages. La fonction doit renvoyer un tableau de personnages.
-// Exemple du résultat attendu :
-// [
-//   ["Aldric", "barbarian"],
-//   ["Dolgrin", "bard"],
-//   ["Ernst", "cleric"],
-//   ["Gellius", "druid"],
-//   ["Gorstag", "fighter"]
-// ]
 
-// Indice : Tu dois créer un tableau vide et le remplir avec des tableaux qui contiennent un nom et une classe. Pour créer un nom aléatoire tu dois créer un tableau de noms et utiliser la méthode Math.random() pour récupérer un nom aléatoire dans le tableau de noms. Pour créer une classe aléatoire tu dois créer un tableau de classes et utiliser la méthode Math.random() pour récupérer une classe aléatoire dans le tableau de classes. Et tu dois faire une boucle pour créer 10 personnages.
+let tableauName = [
+  "Aldric",
+  "Dolgrin",
+  "Ernst",
+  "Gellius",
+  "Gorstag",
+  "Hagar",
+  "Jozan",
+  "Kef",
+  "Leve",
+  "Morn",
+  "Perrin",
+  "Reed",
+  "Rulf",
+  "Shandar",
+  "Taman",
+  "Urth",
+];
+let tableauClass = [
+  "barbarian",
+  "bard",
+  "cleric",
+  "druid",
+  "fighter",
+  "monk",
+  "paladin",
+  "ranger",
+  "rogue",
+  "sorcerer",
+  "warlock",
+  "wizard",
+];
 
-// CODE ICI
+const generatedCharacter = (Names, Class) => {
+  const result = [];
 
-let tableauName = ["Aldric", "Dolgrin", "Ernst", "Gellius", "Gorstag", "Hagar", "Jozan", "Kef", "Leve", "Morn", "Perrin", "Reed", "Rulf", "Shandar", "Taman", "Urth"]
-let tableauClass = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"]
+  for (let i = 1; i <= 10; i++) {
+    const randomName = Math.floor(Math.random() * Names.length);
+    const randomClass = Math.floor(Math.random() * Class.length);
+    result.push([Names[randomName], Class[randomClass]]);
+  }
 
+  return result;
+};
 
-
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-// const generatedCharacter= () => {
-//     let tableau = []
-//     for (let i = 0; i < 10; i++) {
-//         let tableau2 = []
-//         let randomName = tableauName[Math.floor(Math.random() * tableauName.length)]
-//         let randomClass = tableauClass[Math.floor(Math.random() * tableauClass.length)]
-//         tableau2.push(randomName)
-//         tableau2.push(randomClass)
-//         tableau.push(tableau2)
-//     }
-//     return tableau
-// }
-
-// console.log(generatedCharacter())
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-
-// Explication ici nous allons résoudre l'algo avec un .map(). Pourquoi ? Car le .map() permet de parcourir un tableau et de retourner un nouveau tableau avec les éléments modifiés. Donc ici nous allons parcourir le tableauName avec un .map() et pour chaque élément du tableauName nous allons créer un tableau avec un nom aléatoire et une classe aléatoire. Et nous allons retourner ce tableau. Donc le .map() va créer un nouveau tableau avec des tableaux qui contiennent un nom aléatoire et une classe aléatoire. Et nous allons stocker ce nouveau tableau dans une variable tableau. Et nous allons retourner ce tableau à la fin de la fonction.
-
-// Comme vous pouvez le voir il y a plusieurs façon de réussir à avoir le résultat attendu d'un algo. Il y a pas de bonne ou de mauvaise façon de faire. Il y a juste des façons plus optimisées que d'autres. Et il y a des façons plus simples que d'autres. Mais le plus important c'est de réussir à trouver une solution qui fonctionne. Et si vous avez réussi à trouver une solution qui fonctionne, c'est déjà très bien. 
-
-// const generatedCharacter = () => {
-//     let tableau = []
-//     tableauName.map((element) => {
-//         let tableau2 = []
-//         let randomClass = tableauClass[Math.floor(Math.random() * tableauClass.length)]
-//         tableau2.push(element)
-//         tableau2.push(randomClass)
-//         tableau.push(tableau2)
-//     })
-//     return tableau
-// }
-
-// console.log(generatedCharacter())
+console.log(
+  `Exercice 32 : ${JSON.stringify(
+    generatedCharacter(tableauName, tableauClass)
+  )}`
+);
 
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 33
-
-
 
 // Implémenter la fonction filterDuplicate qui prend un tableau en paramètre et qui doit renvoyer un tableau sans doublons.
 
 // Exemple du résultat attendu :
 // filterDuplicate([1, 2, 2, 3, 4, 4, 5]) // [1, 2, 3, 4, 5]
 
-// const filterDuplicate = (tableau) => {
-//     let tableau2 = []
-//     for (let i = 0; i < tableau.length; i++) {
-//         if (!tableau2.includes(tableau[i])) {
-//             tableau2.push(tableau[i])
-//         }
-//     }
-//     return tableau2
-// }
+const filterDuplicate = (array) =>
+  array.sort().filter((nb, index) => nb !== array[index + 1]);
 
-// console.log(filterDuplicate([1, 2, 2, 3, 4, 4, 5]))
-
-// const filterDuplicate2 = (tableau) => {
-//     return tableau.filter((element, index) => {
-//         return tableau.indexOf(element) === index
-//     })
-// }
-// console.log(filterDuplicate2([1, 2, 2, 3, 4, 4, 5]))
-
-// const filterDuplicate3 = (tableau) => {
-//   const uniqueSet = new Set(tableau)
-//   const uniqueSetArray = Array.from(uniqueSet)
-//   return uniqueSetArray
-// }
-
-// console.log(filterDuplicate3([1, 2, 2, 3, 4, 4, 5]))
-
-// const filterDuplicate4 = (tableau) => {
-//   tableau.map((element, index) => {
-//     if (tableau.indexOf(element) !== index) {
-//       tableau.splice(index, 1)
-//     }
-//   }
-//   )
-//   return tableau
-// }
-
-// console.log(filterDuplicate4([1, 2, 2, 3, 4, 4, 5]))
-
-
-
-
+console.log(
+  `Exercice 33 : ${JSON.stringify(filterDuplicate([1, 2, 2, 3, 4, 4, 5]))}`
+);
 
 // EXERCICE 34
-
 
 // Écrivez une fonction judgeFaces qui prend un tableau de grimaces représentées par des chaînes de caractères Emoji en entrée et renvoie un objet avec les scores pour chaque type de grimace. Vous devez utiliser la méthode map et la méthode reduce
 
@@ -882,113 +643,68 @@ const scores = {
   "😄": 1,
 };
 
-
 const judgeFaces = (faces) => {
-  // CODE ICI
+  let result = scores;
+
+  for (let face in result) {
+    const foundFace = faces.sort().filter((smiley) => face === smiley).length;
+    result[face] *= foundFace;
+  }
+
+  return result;
 };
 
-
-
-console.log(judgeFaces(["😀", "😂", "😄", "😂", "😁", "😂", "😄", "😀"]));
-/*
-{
-  '😀': 10,
-  '😁': 4,
-  '😂': 9,
-  '😃': 0,
-  '😄': 2
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-
-/*
-const judgeFaces = (faces) => {
-  return faces.reduce((acc, face) => {
-    if (face in acc) {
-      acc[face] += scores[face];
-    } else {
-      acc[face] = scores[face];
-    }
-    return acc;
-  }, {});
-};
-
-*/
-
+console.log(
+  `Exercice 34 : ${JSON.stringify(
+    judgeFaces(["😀", "😂", "😄", "😂", "😁", "😂", "😄", "😀"])
+  )}`
+);
 
 // EXERCICE 35
 
 // Ecrivez une fonction qui prend en paramètre un tableau de lettre et qui doit retourner un mot formé par ces lettres.
 // Exemple : ["H", "e", "l", "l", "o"] => "Hello"
 
-const wordFromLetters = (tableau) => {
- // CODE ICI
-}
+const wordFromLetters = (tableau) => tableau.join("");
 
-console.log(wordFromLetters(["H", "e", "l", "l", "o"]))
-
-
+console.log(
+  `Exercice 35 : ${JSON.stringify(wordFromLetters(["H", "e", "l", "l", "o"]))}`
+);
 
 // EXERCICE 36
 
 //  // Écrivez une fonction cartes qui génère un jeu de 52 cartes à jouer. Chaque carte est représentée par une chaîne, avec la valeur de la carte suivie de sa couleur. Elles sont représentées par les caractères suivants : ♠, ♥, ♦, ♣. Les valeurs des cartes sont représentées par les chaînes suivantes : 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. La fonction doit renvoyer un tableau de chaînes, avec chaque chaîne représentant une seule carte.
 
-// Exemple : 
+// Exemple :
 
 // [  "2♠", "3♠", "4♠", "5♠", "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠", "A♠",  "2♥", "3♥", "4♥", "5♥", "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥", "A♥",  "2♦", "3♦", "4♦", "5♦", "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦", "A♦",  "2♣", "3♣", "4♣", "5♣", "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣", "A♣"]
 
-
 const cards = () => {
- 
-}
-console.log(cards()); 
+  const colors = ["♠", "♥", "♦", "♣"];
+  const type = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K",
+    "A",
+  ];
+  const result = [];
 
+  for (let i = 0; i < colors.length; i++) {
+    for (let j = 0; j < type.length; j++) {
+      result.push(type[j] + colors[i]);
+    }
+  }
 
+  return result;
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------SOLUTIONS-----------------------------------------------//
-
-// const cards = () => {
-//   let tableau = []
-//   let tableauValeur = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-//   let tableauCouleur = ["♠", "♥", "♦", "♣"]
-//   for (let i = 0; i < tableauValeur.length; i++) {
-//     for (let j = 0; j < tableauCouleur.length; j++) {
-//       tableau.push(tableauValeur[i] + tableauCouleur[j])
-//     }
-//   }
-//   return tableau
-// }
-
-// console.log(cards())
+console.log(`Exercice 36 : ${JSON.stringify(cards())}`);
